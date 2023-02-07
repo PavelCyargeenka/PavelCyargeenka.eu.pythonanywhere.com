@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'welcome/css/gallery.css' %}" >
+{% endblock %}
+
+{% block title %} Gallery {% endblock %}
+
+{% block content %}
+{% include 'welcome/navbar_welcome.html' %}
+
+{% for line_up in line_ups %}
+<div class="mark"><h2>MARK {{line_up.number}}:</h2></div>
+<ul class="m">
+    <li>{{line_up.get_vocals_display|upper}}</li>
+    <li>{{line_up.get_guitar_display|upper}}</li>
+    <li>{{line_up.get_keyboards_display|upper}}</li>
+    <li>{{line_up.get_bass_display|upper}}</li>
+    <li>{{line_up.get_drums_display|upper}}</li>
+</ul>
+<img src="{{line_up.mark_foto.url}}" style="max-width: 1000px" alt="Deep Purple">
+{% endfor %}
+
+{% endblock %}
+
+

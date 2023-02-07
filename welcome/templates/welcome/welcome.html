@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'welcome/css/welcome.css' %}">
+{% endblock %}
+
+{% block title %} Deep Purple {% endblock %}
+
+{% block content %}
+
+{% include 'welcome/navbar_welcome.html' %}
+<a href="{% url 'mp' %}">
+    <img src="{% static 'welcome/img/welcome.png'%}" width="600" height="260">
+</a>
+<div class="footer">
+    Fanpage by <a href="https://github.com/PavelCyargeenka">Pavel Cyargeenka</a>
+</div>
+
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'welcome/css/discography.css' %}" >
+{% endblock %}
+
+{% block title %} Discography {% endblock %}
+
+{% block content %}
+
+{% include 'welcome/navbar_welcome.html' %}
+<h1>DISCOGRAPHY</h1>
+
+{% for album in band_discography %}
+<div class="covers">
+   <a class="album" href="{% url 'alb' slug=album.slug %}">
+    <figure>
+      <img src="{{album.cover.url}}" width="200" height="200">
+      <figcaption>{{album.album_title}} ({{album.album_year}})</figcaption>
+    </figure>
+   </a>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+

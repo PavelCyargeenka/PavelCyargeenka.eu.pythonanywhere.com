@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'contacts/css/contacts.css' %}" >
+{% endblock %}
+
+{% block title %} Contact me {% endblock %}
+
+{% block content %}
+
+{% include 'welcome/navbar_welcome.html' %}
+<h3>Contact me!</h3>
+
+<div class="form">
+    <form method="post" target="_self">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="fields">
+        {{ field.errors }}
+        {{ field.label_tag }} <br>
+        {{ field }}
+    </div>
+    {% endfor %}
+    <input type='submit' value="Submit!">
+    </form>
+</div>
+
+{% endblock %}

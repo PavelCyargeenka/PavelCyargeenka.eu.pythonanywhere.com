@@ -1,0 +1,52 @@
+body {
+    background-color:  azure;
+}
+
+a {
+    color: azure;
+}
+
+ul {
+    background-color: black;
+    text-align: center;
+    list-style-type: none;
+    width: 100%;
+    padding: 10px;
+}
+
+li {
+    padding: 12px;
+    display: inline-block;
+    font-size: larger;
+    font-family:'Lucida Sans', sans-serif
+}
+
+.album {
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    padding: 15px;
+}
+
+.covers {
+    display: inline-block;
+    margin-left: 1%;
+}
+
+figcaption {
+    text-align: center;
+    max-width: 200px;
+    font-weight: bold;
+}
+
+figcaption:hover, a:hover {
+    color: red;
+}
+
+img:hover {
+    opacity: 90%;
+}
+
+

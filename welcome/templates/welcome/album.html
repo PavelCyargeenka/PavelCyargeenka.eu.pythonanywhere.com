@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'welcome/css/album.css' %}" >
+{% endblock %}
+
+{% block title %}{{this_album.album_title}}{% endblock %}
+
+{% block content %}
+
+{% include 'welcome/navbar_welcome.html' %}
+<h2>{{this_album.album_title}} ({{this_album.album_year}})</h2>
+<img src="{{this_album.cover.url}}" width="400" height="400">
+
+<table>
+    {% for song in this_album.songs.all %}
+    <tr>
+        <td>{{song.song_number}}.</td>
+        <td>{{song.song_title}}</td>
+    </tr>
+    {% endfor %}
+</table><br><br>
+
+<table>
+    <tr><td>{{this_album.mark.get_vocals_display|upper}} - vocals</td></tr>
+    <tr><td>{{this_album.mark.get_guitar_display|upper}} - guitar</td></tr>
+    <tr><td>{{this_album.mark.get_keyboards_display|upper}} - keyboards</td></tr>
+    <tr><td>{{this_album.mark.get_drums_display|upper}} - drums</td></tr>
+    {% if this_album.mark.bass == 'GH' %}
+        <tr><td>{{this_album.mark.get_bass_display|upper}} - bass, vocals</td></tr>
+    {% else %}
+        <tr><td>{{this_album.mark.get_bass_display|upper}} - bass</td></tr>
+    {% endif %}
+</table><br><br>
+{% endblock %}

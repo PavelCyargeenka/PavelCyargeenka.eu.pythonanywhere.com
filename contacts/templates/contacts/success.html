@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'contacts/css/contacts.css' %}" >
+{% endblock %}
+
+{% block title %} Thanks! {% endblock %}
+
+{% block content %}
+{% include 'welcome/navbar_welcome.html' %}<br>
+<h3>Thank you! Your message has been successfully sent!</h3>
+{% endblock %}

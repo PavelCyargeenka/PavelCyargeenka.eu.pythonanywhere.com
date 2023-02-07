@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'welcome/css/band.css' %}" />
+{% endblock %}
+
+{% block title %} Band {% endblock %}
+
+{% block content %}
+{% include 'welcome/navbar_welcome.html' %}
+
+<h1>THE BAND</h1>
+
+{% for member in members %}
+<div class="images">
+  <a class="site" href="{{member.site}}">
+    <figure>
+      <img
+        src="{{member.portrait.url}}"
+        alt="DP member"
+        width="150"
+        height="150"
+      />
+      <figcaption class="figcap">{{member.name}}</figcaption>
+    </figure>
+  </a>
+</div>
+{% endfor %}
+{% endblock %}

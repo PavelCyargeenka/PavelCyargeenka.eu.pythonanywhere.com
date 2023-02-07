@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'welcome/css/bio.css' %}" />
+{% endblock %}
+
+{% block title %} Bio {% endblock %}
+
+{% block content %}
+{% include 'welcome/navbar_welcome.html' %}
+
+<img src="{% static 'welcome/img/bioo.jpg'%}" width="400" height="370" />
+
+{% autoescape off %} <!-- to applicate html tags -->
+{{dp_bio.dp_bio}}
+{% endautoescape %}
+
+{% endblock %}
+
+
