@@ -10,4 +10,4 @@ urlpatterns = [
     path('gallery/', views.GalleryView.as_view(), name='gallery'),
 ]
 
-handler404 = views.pagenotfound
+

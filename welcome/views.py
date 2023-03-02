@@ -1,5 +1,4 @@
 from welcome.models import Band, Discography, Mark, Bio
-from django.http import HttpResponseNotFound
 from django.views.generic import TemplateView, ListView, DetailView
 
 
@@ -45,5 +44,3 @@ class GalleryView(ListView):
     context_object_name = 'line_ups'
 
 
-def pagenotfound(request, exception):
-    return HttpResponseNotFound('<h1>Page not found</h1>')
