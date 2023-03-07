@@ -2,7 +2,7 @@
 
 A Deep Purple fan website made with Django framework hosted on PythonAnywhere
 
-https://pavelcyargeenka.eu.pythonanywhere.com/
+https://pavelcyargeenka.eu.pythonanywhere.com
 
 PavelCyargeenka.eu.pythonanywhere.com is a website dedicated to Deep Purple fans, 
 built using the Django web framework and hosted on PythonAnywhere. 
